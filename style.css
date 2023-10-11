@@ -300,7 +300,7 @@ button:hover{
         top: 20%;
     }
     input {
-        padding: 2.4vw 1vw;
+        padding: 5.4vw 1vw;
         font-size: 3.3vw;
     }
     button>i {
@@ -308,7 +308,8 @@ button:hover{
     }
     
     button {
-        padding: 2vw
+        font-size: 9vw;
+        padding: 2.1vw 3vw;    
     }
     .weather-dtals>h2 {
         font-size: 4vw;
