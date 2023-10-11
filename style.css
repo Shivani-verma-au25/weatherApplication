@@ -15,19 +15,13 @@ html,body{
 .weather{
     width: 100%;
     height: 100%;
-    background-color: red;
+    /* background-color: red; */
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-.weather>img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-}
 
+}
 .lft{
     width: 60%;
     height: 100%;
@@ -73,7 +67,6 @@ html,body{
     background-color: #00000060;
     position: absolute;
     top: 0;
-    z-index: 1;
 }
 .ryt{
     width: 40%;
@@ -90,9 +83,10 @@ html,body{
     width: 85%;
     height: 90%;
     /* background:linear-gradient(#0000,#0000,#0000); */
-    position: relative;
+    position: absolute;
     border: .3vw solid #0022;
     background: linear-gradient(transparent,#000000d2,#0000009b);
+    z-index: 999;
 }
 .search-box{
     width: 100%;
@@ -177,4 +171,32 @@ button:hover{
 .wd>p{
     font-size: 2vw;
     font-family: gilroy;
+}
+/* error */
+.error-container{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    display: none;
+}
+.error-container>img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 0%;
+}
+.weather-cont{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.weather-cont>img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 0%;
 }
