@@ -12,15 +12,17 @@ html,body{
     height: 100vh;
     position: relative;
 }
+main{
+    overflow: hidden;
+}
 .weather{
     width: 100%;
     height: 100%;
-    /* background-color: red; */
+    background-color: #00000077;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
 .lft{
     width: 60%;
@@ -185,7 +187,7 @@ button:hover{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: 0%;
+    /* object-position: 0%; */
 }
 .weather-cont{
     width: 100%;
@@ -198,5 +200,158 @@ button:hover{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: 0%;
+    /* object-position: 0%; */
+}
+.temp>h2{
+    font-size: 2vw;
+    font-weight: 100;
+    font-family: gilroy;
+}
+.weather>#cld{
+    width: 20%;
+    height: 30%;
+    background-color: transparent;
+    position: absolute;   
+    left: -20%;
+    animation-name: move1;
+    animation-duration: 20s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+    z-index: 999;
+    display: none;
+}
+
+@keyframes move1 {
+    0%{
+        left: -30%;
+    }
+    100%{
+        left: 100%;
+    }
+}
+
+.weather>#cld2{
+    width: 15%;
+    height: 15%;
+    background-color: transparent;
+    position: absolute;   
+    right: -20%;
+    top: 2%;
+    animation-name: move2;
+    animation-duration: 15s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    display: none;
+}
+@keyframes move2 {
+    0%{
+        right: -30%;
+    }
+    100%{
+        right: 100%;
+    }
+}
+.weather>#sun{
+    width: 50%;
+    height: 50%;
+    background-color: transparent;
+    position: absolute;   
+    right: -20%;
+    top:20%;
+    animation-name: moveSun;
+    animation-duration: 15s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    display: none;
+}
+
+@keyframes moveSun {
+    0%{
+        right: -30%;
+    }
+    100%{
+        right: 100%;
+    }
+}
+
+
+
+
+/* media queries */
+@media screen and (max-width:500px) {
+    .container{
+        width: 100%;
+        min-height: 100%;
+    }
+    .weather{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 2vw;
+    }
+    .lft{
+        width: 100%;
+        height: 20%;
+    }
+    .ryt{
+        width: 100%;
+        height: 80%;
+        top: 20%;
+    }
+    input {
+        padding: 2.4vw 1vw;
+        font-size: 3.3vw;
+    }
+    button>i {
+        font-size: 5vw;
+    }
+    
+    button {
+        padding: 2vw
+    }
+    .weather-dtals>h2 {
+        font-size: 4vw;
+    }
+    .bnd>i {
+        font-size: 5.8vw;
+    }
+    .wd>p {
+        font-size: 5vw;
+    }
+    .lft>h1 {
+        font-size: 4vw;
+        text-align: center;
+    }
+    .temp>h1 {
+        font-size: 8vw;
+    }
+    .temp>h2 {
+        font-size: 4vw;
+    }
+    .city>p {
+        font-size: 6vw;
+    }
+    .error-container {
+        width: 100%;
+        height: 100%;
+    }
+    /* .error-container>img {
+        
+        object-position: none;
+    } */
+    /* .weather-cont>img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /* object-position: 0%;
+    } */
+    .weather>#cld {
+        width: 50%;
+        height: 23%;
+    }
+    .weather>#cld2 {
+        width: 29%;
+        height: 15%;
+    }
 }

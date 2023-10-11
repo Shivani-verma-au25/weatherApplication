@@ -37,27 +37,38 @@ async function weatherTemp(city){
         // images 
 
         if (data.weather[0].main === 'Clouds') {
-            console.log('Cloud');
+            // console.log('Cloud');
             document.querySelector('.weather-cont>img').src = `https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1965&q=80`
+            document.querySelector('#cld').style.display = 'initial'
+            document.querySelector('#cld2').style.display = 'initial'
+        }else{
+            document.querySelector('#cld2').style.display = 'none'
+            document.querySelector('#cld').style.display = 'none'
         }
+
         if (data.weather[0].main === 'Clear') {
-            console.log('clear');
+            // console.log('clear');
             document.querySelector('.weather-cont>img').src = `https://images.unsplash.com/photo-1601297183305-6df142704ea2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80`
+
         }
         if (data.weather[0].main === 'Mist') {
-            console.log('mist');
+            // console.log('mist');
             document.querySelector('.weather-cont>img').src = `https://images.unsplash.com/photo-1593687642750-fed751b4e476?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEwfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=500&q=60`
         }
         if (data.weather[0].main === 'Rain') {
-            console.log('rain');
+            // console.log('rain');
             document.querySelector('.weather-cont>img').src = `https://images.unsplash.com/photo-1523772721666-22ad3c3b6f90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80`
         }
         if (data.weather[0].main === 'Snow') {
-            console.log('snw');
+            // console.log('snw');
             document.querySelector('.weather-cont>img').src = `https://images.unsplash.com/photo-1483664852095-d6cc6870702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80`
         }
+        // if (data.weather[0].description === 'broken clouds') {
+        //     // console.log('snw');
+        //     document.querySelector('.weather-cont>img').src = `https://images.unsplash.com/photo-1525920980995-f8a382bf42c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80`
+        // }
         if (data.weather[0].main === 'Haze') {
-            console.log('haze');
+            // console.log('haze');
             document.querySelector('.weather-cont>img').src = `https://images.unsplash.com/36/STzPBJUsSza3mzUxiplj_DSC09775.JPG?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aGF6ZXxlbnwwfDB8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60`
         }
 
