@@ -16,8 +16,8 @@ btn.addEventListener('click',(e)=>{
 async function weatherTemp(city){
         const api_key = 'dd3ec2941c1a9fe2c45f626976aecc5d'
         let url = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api_key}`)
-        let data = await await url.json()
-        if (data.cod == 404) {
+        let data = await url.json()
+        if (data.cod == '404') {
             bgImgesCont.style.display = 'block'
             document.querySelector('.temp>h1').innerHTML =`0 °C`
             document.querySelector('.city>p').innerHTML = ``
@@ -27,7 +27,9 @@ async function weatherTemp(city){
             return
         }
         bgImgesCont.style.display = 'none'
-        document.querySelector('.temp>h1').innerHTML =`${Math.round(data.main.temp-273.15)} °C`
+        let temperature = Math.floor(data.main.temp)
+        document.querySelector('.temp>h1').innerHTML =`${(temperature - 273.15).toFixed(1)} °C`
+        // document.querySelector('.temp>h1').innerHTML =`${Math.round(data.main.temp)} °C`
         document.querySelector('.city>p').innerHTML = `${data.name}`
         document.querySelector('.cloud>p').innerHTML = `${data.weather[0].description}`
         document.querySelector('.humidity>p').innerHTML = `${data.main.humidity}%`
@@ -63,10 +65,18 @@ async function weatherTemp(city){
             // console.log('snw');
             document.querySelector('.weather-cont>img').src = `https://images.unsplash.com/photo-1483664852095-d6cc6870702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80`
         }
-        // if (data.weather[0].description === 'broken clouds') {
-        //     // console.log('snw');
-        //     document.querySelector('.weather-cont>img').src = `https://images.unsplash.com/photo-1525920980995-f8a382bf42c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80`
-        // }
+        if (data.weather[0].description === 'broken clouds') {
+            // console.log('snw');
+            document.querySelector('.weather-cont>img').src = `https://img.freepik.com/premium-photo/strikingly-dramatic-sky-with-abundance-texture-depth-generative-ai_861171-2709.jpg`
+        }
+        if (data.weather[0].description === 'smoke') {
+            // console.log('snw');
+            document.querySelector('.weather-cont>img').src = `https://images.unsplash.com/photo-1580462611434-39cde8c29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80`
+        }
+        if (data.weather[0].description === 'fog') {
+            // console.log('snw');
+            document.querySelector('.weather-cont>img').src = `https://images.unsplash.com/photo-1541480110211-586977e40589?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1793&q=80`
+        }
         if (data.weather[0].main === 'Haze') {
             // console.log('haze');
             document.querySelector('.weather-cont>img').src = `https://images.unsplash.com/36/STzPBJUsSza3mzUxiplj_DSC09775.JPG?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aGF6ZXxlbnwwfDB8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60`
